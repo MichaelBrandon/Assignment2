@@ -1,7 +1,7 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
-var port = 5000;
+var port = 3000;
 var path = require('path');
 var router = express.Router();
 var bodyParser = require('body-parser');
@@ -43,9 +43,18 @@ router.get('/entries', function(req,res) {
     res.render('gameentries/addgame');
 });
 
-//Route to entries.html
+//Route to login.html
 router.get('/login', function(req,res) {
     res.render('login');
+});
+
+//Route to get to topic.html
+router.get('/topic', function(req,res) {
+    res.render('topic');
+});
+
+router.get('/createAccount', function(req, res) {
+    res.render('createAccount');
 });
 
 app.get('/', function(req,res) {
